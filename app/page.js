@@ -247,7 +247,7 @@ export default function Home() {
       {/* ================= PROJECTS ================= */}
       <section
         id="projects"
-        className="max-w-6xl mx-auto px-6 sm:px-2 md:px-2 py-1 sm:py-15 md:py-15"
+        className="max-w-6xl mx-auto px-6 sm:px-2 md:px-2 py-1 sm:py-25 md:py-25"
       >
           {/* ================= PROJECTS ================= */}
         <section
@@ -263,7 +263,7 @@ export default function Home() {
             font-bold
             text-2xl sm:text-3xl md:text-4xl
             mb-12 sm:mb-20 md:mb-24
-            
+            mt-5
           "
         >
           Selected Projects
