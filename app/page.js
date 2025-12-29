@@ -81,61 +81,100 @@ export default function Home() {
               A Bit About Me
             </motion.h2>
 
-            <motion.p
+           <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-gray-400 leading-relaxed max-w-md"
+              className="
+                text-gray-400
+                leading-relaxed
+                text-sm sm:text-base
+                max-w-full sm:max-w-md
+              "
             >
-              I build reliable software systems and work with data to solve real-world problems.
+              I build and ship scalable software products for clients in India and abroad.
+              I’ve delivered multiple production systems — some serving lakhs+ active users —
+              across SaaS, marketplaces, and AI-driven platforms.
+              My work focuses on performance, maintainability, and solving real business problems
+              at scale.
             </motion.p>
 
+
             {/* CIRCULAR BUTTONS */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="flex gap-6 pt-6"
+           <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="
+              grid grid-cols-2 gap-4 pt-6
+              sm:flex sm:flex-wrap sm:gap-6
+            "
+          >
+            <a
+              href="/Vishwajeet_Bhardwaj_Resume.pdf"
+              download
+              className="
+                w-24 h-24 sm:w-28 sm:h-28
+                rounded-full
+                bg-[#161B22] text-gray-200
+                border border-yellow-500/30
+                flex items-center justify-center font-medium
+                hover:border-yellow-400 hover:text-yellow-400
+                hover:scale-105 transition
+              "
             >
-              <a
-                href="/Vishwajeet_Bhardwaj_Resume.pdf"
-                download
-                className="w-28 h-28 rounded-full bg-yellow-500 text-black
-                          flex items-center justify-center font-medium
-                          hover:scale-105 transition"
-              >
-                Resume
-              </a>
+              Resume
+            </a>
 
+            <motion.a
+              href="#projects"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              className="
+                w-24 h-24 sm:w-28 sm:h-28
+                rounded-full
+                bg-[#161B22] text-gray-200
+                border border-red-500/30
+                flex items-center justify-center font-medium
+                hover:border-red-400 hover:text-red-400
+              "
+            >
+              Projects
+            </motion.a>
 
-              <motion.a
-                href="#projects"
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-28 h-28 rounded-full bg-red-500 text-black
-                           flex items-center justify-center font-medium"
-              >
-                Projects
-              </motion.a>
-              <motion.a
-                href="#clients"
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-28 h-28 rounded-full bg-blue-300 text-black
-                           flex items-center justify-center font-medium"
-              >
-                Clients
-              </motion.a>
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-28 h-28 rounded-full bg-cyan-400 text-black
-                           flex items-center justify-center font-medium"
-              >
-                Contact
-              </motion.a>
-            </motion.div>
+            <motion.a
+              href="#clients"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              className="
+                w-24 h-24 sm:w-28 sm:h-28
+                rounded-full
+                bg-[#161B22] text-gray-200
+                border border-blue-400/30
+                flex items-center justify-center font-medium
+                hover:border-blue-300 hover:text-blue-300
+              "
+            >
+              Clients
+            </motion.a>
+
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              className="
+                w-24 h-24 sm:w-28 sm:h-28
+                rounded-full
+                bg-[#161B22] text-gray-200
+                border border-cyan-400/30
+                flex items-center justify-center font-medium
+                hover:border-cyan-300 hover:text-cyan-300
+              "
+            >
+              Contact
+            </motion.a>
+          </motion.div>
+
           </motion.div>
         </div>
       </section>
