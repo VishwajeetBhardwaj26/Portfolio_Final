@@ -79,7 +79,7 @@ export default function Home() {
     </motion.div>
 
   </div>
-</motion.div>
+          </motion.div>
 
 
           {/* RIGHT – CONTENT */}
@@ -128,14 +128,15 @@ export default function Home() {
 
             {/* CIRCULAR BUTTONS */}
            <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="
-              grid grid-cols-2 gap-4 pt-6
-              sm:flex sm:flex-wrap sm:gap-6
-            "
-          >
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.5 }}
+  className="
+    grid grid-cols-2 place-items-center gap-4 pt-6
+    sm:flex sm:flex-wrap sm:gap-6 sm:justify-start
+  "
+>
+
             <a
               href="/Vishwajeet_Bhardwaj_Resume.pdf"
               download
@@ -207,9 +208,8 @@ export default function Home() {
       {/* ================= PROJECTS ================= */}
       <section
         id="projects"
-        className="max-w-6xl mx-auto px-6 sm:px-2 md:px-2"
+        className="max-w-6xl mx-auto px-6 sm:px-2 md:px-2 py-1 sm:py-15 md:py-15"
       >
-        <div className="space-y-20">
           {/* ================= PROJECTS ================= */}
         <section
           id="projects"
@@ -495,7 +495,6 @@ export default function Home() {
 
           </div>
         </section>
-        </div>
       </section>
 {/* ================= COMPANIES & CLIENTS ================= */}
         <section className="max-w-6xl mx-auto px-12 py-12 sm:px-2 md:px-2" id="clients">
