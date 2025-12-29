@@ -124,19 +124,58 @@ export default function Home() {
               My work focuses on performance, maintainability, and solving real business problems
               at scale.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="
+                mt-8
+                flex justify-between gap-4
+                max-w-full sm:max-w-xl
+              "
+            >
+              {/* Metric 1 */}
+              <div className="text-center sm:text-left flex-1">
+                <p className="text-2xl font-semibold text-gray-100">
+                  5+
+                </p>
+                <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                  Projects Delivered
+                </p>
+              </div>
+
+              {/* Metric 2 */}
+              <div className="text-center sm:text-left flex-1">
+                <p className="text-2xl font-semibold text-gray-100">
+                  3+
+                </p>
+                <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                  Countries
+                </p>
+              </div>
+
+              {/* Metric 3 */}
+              <div className="text-center sm:text-left flex-1">
+                <p className="text-2xl font-semibold text-gray-100">
+                  100K+
+                </p>
+                <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                  Users Impacted
+                </p>
+              </div>
+            </motion.div>
 
 
             {/* CIRCULAR BUTTONS */}
            <motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 0.5 }}
-  className="
-    grid grid-cols-2 place-items-center gap-4 pt-6
-    sm:flex sm:flex-wrap sm:gap-6 sm:justify-start
-  "
->
-
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="
+                grid grid-cols-2 place-items-center gap-4 pt-6
+                sm:flex sm:flex-wrap sm:gap-6 sm:justify-start
+              "
+            >
             <a
               href="/Vishwajeet_Bhardwaj_Resume.pdf"
               download
@@ -672,8 +711,167 @@ export default function Home() {
 
           </div>
         </section>
+
+    {/* ================= TESTIMONIALS ================= */}
+        <section className="max-w-6xl mx-auto px-12 sm:px-2 md:px-2 mt-5">
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="
+              text-2xl sm:text-3xl font-bold
+              mb-12
+            "
+          >
+            What People Say
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            {/* Testimonial 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="
+                bg-[#0B0F1A]
+                border border-gray-800
+                rounded-xl
+                p-6
+              "
+            >
+              <p className="text-gray-300 text-sm leading-relaxed">
+                “Vishwajeet consistently demonstrated ownership, reliability, and the
+                ability to deliver high-quality, scalable software systems. His
+                contributions added measurable value across multiple production
+                projects.”
+              </p>
+
+              <div className="mt-6">
+                <p className="text-sm font-semibold text-gray-100">
+                  Director
+                </p>
+                <p className="text-xs text-gray-500">
+                  Lawazia Tech Pvt. Ltd.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Testimonial 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="
+                bg-[#0B0F1A]
+                border border-gray-800
+                rounded-xl
+                p-6
+              "
+            >
+              <p className="text-gray-300 text-sm leading-relaxed">
+                “He worked across the full software development lifecycle — frontend,
+                backend, databases, cloud deployment, and AI automation — and handled
+                complex modules independently with professionalism.”
+              </p>
+
+              <div className="mt-6">
+                <p className="text-sm font-semibold text-gray-100">
+                  Director
+                </p>
+                <p className="text-xs text-gray-500">
+                  PAIGN.AI
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Testimonial 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="
+                bg-[#0B0F1A]
+                border border-gray-800
+                rounded-xl
+                p-6
+              "
+            >
+              <p className="text-gray-300 text-sm leading-relaxed">
+                “A dependable problem solver with strong learning ability and work
+                ethic. Someone you can rely on for complex software projects.”
+              </p>
+
+              <div className="mt-6">
+                <p className="text-sm font-semibold text-gray-100">
+                  Director
+                </p>
+                <p className="text-xs text-gray-500">
+                  Breathe4School
+                </p>
+              </div>
+            </motion.div>
+
+          </div>
+        </section>
+{/* ================= AVAILABILITY ================= */}
+<section className="max-w-6xl mx-auto px-6 mb-10 mt-20">
+  <motion.div
+    initial={{ opacity: 0, y: 10 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    className="
+      border border-gray-800
+      bg-[#0B0F1A]
+      rounded-2xl
+      p-6 sm:p-8
+      flex flex-col sm:flex-row
+      items-start sm:items-center
+      justify-between
+      gap-6
+    "
+  >
+    {/* Left */}
+    <div>
+      <p className="text-sm text-gray-400">
+        Current Availability
+      </p>
+      <p className="text-lg sm:text-xl font-semibold text-gray-100 mt-1">
+        Open for  · Contract · Freelance
+      </p>
+      <p className="text-sm text-gray-500 mt-2 max-w-xl">
+        Available for building scalable, production-ready web and AI-driven
+        applications for global clients and teams.
+      </p>
+    </div>
+
+    {/* Right */}
+    <a
+      href="#contact"
+      className="
+        inline-flex items-center justify-center
+        px-6 py-3
+        rounded-full
+        bg-cyan-400/10
+        text-cyan-400
+        border border-cyan-400/30
+        font-medium
+        hover:bg-cyan-400/20
+        transition
+      "
+    >
+      Let’s Talk →
+    </a>
+  </motion.div>
+</section>
+
       {/* ================= CONTACT ================= */}
-       <section id="contact" className="max-w-6xl mx-auto px-12 pb-32 sm:px-2 md:px-2">
+       <section id="contact" className="max-w-6xl mx-auto px-12 pb-32 sm:px-2 md:px-2 mt-10 ">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
