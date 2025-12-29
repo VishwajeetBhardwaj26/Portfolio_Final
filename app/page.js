@@ -1,8 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Home() {
+  const formRef = useRef(null);
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
+
+   const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus(null);
+
+    emailjs
+      .sendForm(
+        "service_0zhhjww",     // 🔴 replace
+        "template_9vl0it8",    // 🔴 replace
+        formRef.current,
+        "PNbYzr3e0akwUJ6wC"      // 🔴 replace
+      )
+      .then(() => {
+        setStatus("success");
+        formRef.current.reset();
+      })
+      .catch(() => {
+        setStatus("error");
+      })
+      .finally(() => setLoading(false));
+  };
+
   return (
     <main className="bg-[#0E1116] text-gray-200">
 
@@ -602,31 +630,74 @@ export default function Home() {
 </section>
 
       {/* ================= CONTACT ================= */}
-      <section
-        id="contact"
-        className="max-w-6xl mx-auto px-12 pb-32"
-      >
+       <section id="contact" className="max-w-6xl mx-auto px-12 pb-32">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="text-3xl font-bold mb-6"
         >
           Let’s Connect
         </motion.h2>
 
-        <p className="text-gray-400 max-w-xl">
-          If you’re interested in working together or discussing a project,
-          feel free to reach out.
+        <p className="text-gray-400 max-w-xl mb-10">
+          Have a project in mind or want to collaborate?  
+          Send me a message and I’ll get back to you.
         </p>
 
-        <a
-          href="mailto:vishwajeetbhardwaj2612@gmail.com"
-          className="inline-block mt-6 text-cyan-400 hover:underline"
+        <form
+          ref={formRef}
+          onSubmit={sendEmail}
+          className="max-w-xl space-y-6"
         >
-          vishwajeetbhardwaj2612@gmail.com
-        </a>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            className="w-full bg-[#0B0F1A] border border-gray-800 px-4 py-3 rounded-md
+                       focus:outline-none focus:border-cyan-400"
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            className="w-full bg-[#0B0F1A] border border-gray-800 px-4 py-3 rounded-md
+                       focus:outline-none focus:border-cyan-400"
+          />
+
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+            className="w-full bg-[#0B0F1A] border border-gray-800 px-4 py-3 rounded-md
+                       focus:outline-none focus:border-cyan-400"
+          />
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="px-6 py-3 bg-cyan-400 text-black rounded-md font-medium
+                       hover:scale-105 transition disabled:opacity-50"
+          >
+            {loading ? "Sending..." : "Send Message"}
+          </button>
+
+          {status === "success" && (
+            <p className="text-green-400 text-sm">
+              ✅ Message sent successfully!
+            </p>
+          )}
+
+          {status === "error" && (
+            <p className="text-red-400 text-sm">
+              ❌ Something went wrong. Please try again.
+            </p>
+          )}
+        </form>
       </section>
 
     </main>
