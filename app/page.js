@@ -708,6 +708,30 @@ export default function Home() {
                 Visit →
               </a>
             </motion.div>
+            
+            {/* CARD 7 */}
+            <motion.div
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3 }}
+              className="border border-gray-800 rounded-xl p-6 bg-[#0B0F1A]"
+            >
+              <img
+                src="https://cdn.theorg.com/365d5164-f2ed-419f-b34a-ba610ea8c17a_medium.jpg"
+                alt="Breathe4School"
+                className="h-10 object-contain mb-6"
+              />
+              <h3 className="text-xl font-semibold">Prodware Solutions</h3>
+              <p className="mt-3 text-gray-400 text-sm leading-relaxed">
+                Prodware Solutions is a growing IT and healthcare services company delivering enterprise solutions, with strong expertise in Oracle platforms and AI-driven technologies to improve business efficiency and operations.
+              </p>
+              <a
+                href="https://www.linkedin.com/company/prodware-solutions-llc/"
+                target="_blank"
+                className="inline-block mt-4 text-cyan-400 hover:underline text-sm"
+              >
+                Visit →
+              </a>
+            </motion.div>
 
           </div>
         </section>
@@ -783,7 +807,7 @@ export default function Home() {
                   Director
                 </p>
                 <p className="text-xs text-gray-500">
-                  PAIGN.AI
+                  Prodware solutions
                 </p>
               </div>
             </motion.div>
