@@ -426,9 +426,7 @@ export default function Home() {
                   </h3>
 
                   <p className="mt-4 text-gray-400 max-w-3xl leading-relaxed">
-                    A public-facing platform promoting mindfulness and breathing
-                    practices in schools. Built clean, accessible UI with strong
-                    responsiveness and performance focus.
+                    Aim to solve the challenges of fragmented, inefficient, and outdated education systems by providing a unified digital learning platform.
                   </p>
 
                   <p className="mt-4 text-sm text-gray-500">
@@ -691,17 +689,16 @@ export default function Home() {
               className="border border-gray-800 rounded-xl p-6 bg-[#0B0F1A]"
             >
               <img
-                src="b4school.jpg"
-                alt="Breathe4School"
+                src="https://media.licdn.com/dms/image/v2/D560BAQFtZv4tL7m5qg/company-logo_200_200/company-logo_200_200/0/1736703455836/xploresense_private_limited_logo?e=1769040000&v=beta&t=vmjG1C6SJJ-CjhO6GQx525gYsZmiHHAYsovyqkVqzEY"
+                alt="XploreSense Private Limited"
                 className="h-10 object-contain mb-6"
               />
-              <h3 className="text-xl font-semibold">Breathe4School</h3>
+              <h3 className="text-xl font-semibold">XploreSense Private Limited</h3>
               <p className="mt-3 text-gray-400 text-sm leading-relaxed">
-                Education-focused wellness initiative promoting mindfulness and
-                breathing practices in schools.
+                Motive is to make education more accessible, organized, and personalized by simplifying academic management, improving learner engagement, and enabling institutions to adapt to modern, technology-driven learning needs.
               </p>
               <a
-                href="https://breathe4school.com"
+                href="https://www.linkedin.com/company/xploresense-private-limited/posts/?feedView=all"
                 target="_blank"
                 className="inline-block mt-4 text-cyan-400 hover:underline text-sm"
               >
@@ -744,11 +741,13 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="
-              text-2xl sm:text-3xl font-bold
+             font-bold
+            text-2xl sm:text-3xl md:text-4xl
+            mb-10 sm:mb-7 md:mb-8
               mb-12
             "
           >
-            What People Say
+            Testimonials
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -835,7 +834,7 @@ export default function Home() {
                   Director
                 </p>
                 <p className="text-xs text-gray-500">
-                  Breathe4School
+                  XploreSense Private Limited
                 </p>
               </div>
             </motion.div>
