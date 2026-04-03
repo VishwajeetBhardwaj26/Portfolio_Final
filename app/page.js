@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import ProjectsSection from "./projects";
 
 export default function Home() {
   const formRef = useRef(null);
@@ -137,7 +138,7 @@ export default function Home() {
               {/* Metric 1 */}
               <div className="text-center sm:text-left flex-1">
                 <p className="text-2xl font-semibold text-gray-100">
-                  5+
+                  7
                 </p>
                 <p className="text-xs sm:text-sm text-gray-400 mt-1">
                   Projects Delivered
@@ -147,7 +148,7 @@ export default function Home() {
               {/* Metric 2 */}
               <div className="text-center sm:text-left flex-1">
                 <p className="text-2xl font-semibold text-gray-100">
-                  3+
+                  4
                 </p>
                 <p className="text-xs sm:text-sm text-gray-400 mt-1">
                   Countries
@@ -250,288 +251,7 @@ export default function Home() {
         className="max-w-6xl mx-auto px-6 sm:px-2 md:px-2 py-1 sm:py-25 md:py-25"
       >
           {/* ================= PROJECTS ================= */}
-        <section
-          id="projects"
-          className="max-w-6xl mx-auto px-6 sm:px-2 md:px-2"
-        >
-        <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="
-            font-bold
-            text-2xl sm:text-3xl md:text-4xl
-            mb-12 sm:mb-20 md:mb-24
-            mt-5
-          "
-        >
-          Selected Projects
-        </motion.h2>
-
-
-          <div className="space-y-24">
-
-            {/* PROJECT 1 – SPRYNY */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative pl-10 border-l border-gray-800 group"
-            >
-              <span className="absolute left-[-6px] top-6 w-3 h-3 rounded-full bg-cyan-400 opacity-70 group-hover:opacity-100 transition" />
-
-              <div className="flex items-start gap-5">
-                {/* <img
-                  src="/logos/spriny.png"
-                  alt="Spriny logo"
-                  className="w-10 h-10 object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition"
-                /> */}
-
-                <div>
-                  <h3 className="text-2xl font-semibold group-hover:text-cyan-400 transition">
-                    Spriny – Agile Sprint Planner
-                  </h3>
-
-                  <p className="mt-4 text-gray-400 max-w-3xl leading-relaxed">
-                    A lightweight, AI-powered sprint planning platform helping software
-                    teams manage work efficiently without complex overhead. Built
-                    scalable frontend and backend components with automation-focused
-                    workflows.
-                  </p>
-
-                  <p className="mt-4 text-sm text-gray-500">
-                    Role: Full-Stack Engineer · Tech: Next.js, Node.js, MongoDB
-                  </p>
-
-                  <a
-                    href="https://spriny.io/"
-                    target="_blank"
-                    className="inline-block mt-6 text-cyan-400 hover:underline"
-                  >
-                    View Live →
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* PROJECT 2 – URBANSTALL */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative pl-10 border-l border-gray-800 group"
-            >
-              <span className="absolute left-[-6px] top-6 w-3 h-3 rounded-full bg-cyan-400 opacity-70 group-hover:opacity-100 transition" />
-
-              <div className="flex items-start gap-5">
-                {/* <img
-                  src="/logos/urbanstall.png"
-                  alt="UrbanStall logo"
-                  className="w-10 h-10 object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition"
-                /> */}
-
-                <div>
-                  <h3 className="text-2xl font-semibold group-hover:text-cyan-400 transition">
-                    UrbanStall – Local Marketplace App
-                  </h3>
-
-                  <p className="mt-4 text-gray-400 max-w-3xl leading-relaxed">
-                    A discovery and marketplace platform connecting local vendors with
-                    nearby shoppers. Built responsive UI components and
-                    performance-optimized listing pages to improve product
-                    discoverability.
-                  </p>
-
-                  <p className="mt-4 text-sm text-gray-500">
-                    Role: Frontend Developer · Tech: React, Tailwind CSS
-                  </p>
-
-                  <a
-                    href="https://www.urbanstall.app/explore"
-                    target="_blank"
-                    className="inline-block mt-6 text-cyan-400 hover:underline"
-                  >
-                    View Live →
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* PROJECT 3 – PAIGN */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative pl-10 border-l border-gray-800 group"
-            >
-              <span className="absolute left-[-6px] top-6 w-3 h-3 rounded-full bg-cyan-400 opacity-70 group-hover:opacity-100 transition" />
-
-              <div className="flex items-start gap-5">
-                {/* <img
-                  src="/logos/paign.png"
-                  alt="Paign logo"
-                  className="w-10 h-10 object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition"
-                /> */}
-
-                <div>
-                  <h3 className="text-2xl font-semibold group-hover:text-cyan-400 transition">
-                    Paign.ai – AI-Enabled Productivity Platform
-                  </h3>
-
-                  <p className="mt-4 text-gray-400 max-w-3xl leading-relaxed">
-                    A modern AI-driven productivity suite that simplifies workflows and
-                    provides real-time AI assistance. Contributed to UI and backend
-                    integrations for seamless AI-powered experiences.
-                  </p>
-
-                  <p className="mt-4 text-sm text-gray-500">
-                    Role: Full-Stack Contributor · Tech: Next.js, React, AI APIs
-                  </p>
-
-                  <a
-                    href="https://www.paign.ai/home"
-                    target="_blank"
-                    className="inline-block mt-6 text-cyan-400 hover:underline"
-                  >
-                    View Live →
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* PROJECT 4 – BREATHE4SCHOOL */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative pl-10 border-l border-gray-800 group"
-            >
-              <span className="absolute left-[-6px] top-6 w-3 h-3 rounded-full bg-cyan-400 opacity-70 group-hover:opacity-100 transition" />
-
-              <div className="flex items-start gap-5">
-                {/* <img
-                  src="/logos/breathe4school.png"
-                  alt="Breathe4School logo"
-                  className="w-10 h-10 object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition"
-                /> */}
-
-                <div>
-                  <h3 className="text-2xl font-semibold group-hover:text-cyan-400 transition">
-                    Breathe4School – Education Wellness Platform
-                  </h3>
-
-                  <p className="mt-4 text-gray-400 max-w-3xl leading-relaxed">
-                    Aim to solve the challenges of fragmented, inefficient, and outdated education systems by providing a unified digital learning platform.
-                  </p>
-
-                  <p className="mt-4 text-sm text-gray-500">
-                    Role: Full-Stack Engineer · Tech: Next.js, Responsive Design
-                  </p>
-
-                  <a
-                    href="https://breathe4school.com/about-us/"
-                    target="_blank"
-                    className="inline-block mt-6 text-cyan-400 hover:underline"
-                  >
-                    View Live →
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* PROJECT 5 – EXCELRS */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative pl-10 border-l border-gray-800 group"
-            >
-              <span className="absolute left-[-6px] top-6 w-3 h-3 rounded-full bg-cyan-400 opacity-70 group-hover:opacity-100 transition" />
-
-              <div className="flex items-start gap-5">
-                {/* <img
-                  src="/logos/excelrs.png"
-                  alt="ExcelRS logo"
-                  className="w-10 h-10 object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition"
-                /> */}
-
-                <div>
-                  <h3 className="text-2xl font-semibold group-hover:text-cyan-400 transition">
-                    Excelrs – Excel Resource Management
-                  </h3>
-
-                  <p className="mt-4 text-gray-400 max-w-3xl leading-relaxed">
-                    An internal tool extending Excel workflows for large datasets with
-                    batch operations and structured processing. Implemented backend
-                    workflows and efficient UI for daily operations.
-                  </p>
-
-                  <p className="mt-4 text-sm text-gray-500">
-                    Role: Full-Stack Engineer · Tech: React, Node.js, Express, SQL
-                  </p>
-
-                  <a
-                    href="https://www.lawazia.tech/excelrs"
-                    target="_blank"
-                    className="inline-block mt-6 text-cyan-400 hover:underline"
-                  >
-                    View Live →
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* PROJECT 6 – AMPY */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative pl-10 border-l border-gray-800 group"
-            >
-              <span className="absolute left-[-6px] top-6 w-3 h-3 rounded-full bg-cyan-400 opacity-70 group-hover:opacity-100 transition" />
-
-              <div className="flex items-start gap-5">
-                {/* <img
-                  src="/logos/ampy.png"
-                  alt="Ampy logo"
-                  className="w-10 h-10 object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition"
-                /> */}
-
-                <div>
-                  <h3 className="text-2xl font-semibold group-hover:text-cyan-400 transition">
-                    Ampy – Interactive AMP Builder
-                  </h3>
-
-                  <p className="mt-4 text-gray-400 max-w-3xl leading-relaxed">
-                    An interactive AMP page builder enabling rapid creation and
-                    publishing of AMP-compliant pages. Built templates, live previews,
-                    and publishing workflows.
-                  </p>
-
-                  <p className="mt-4 text-sm text-gray-500">
-                    Role: Full-Stack Engineer · Tech: React, Next.js, Node.js
-                  </p>
-
-                  <a
-                    href="https://www.lawazia.tech/ampy"
-                    target="_blank"
-                    className="inline-block mt-6 text-cyan-400 hover:underline"
-                  >
-                    View Live →
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
-        </section>
+        <ProjectsSection />
       </section>
 {/* ================= COMPANIES & CLIENTS ================= */}
         <section className="max-w-6xl mx-auto px-12 py-12 sm:px-2 md:px-2" id="clients">
@@ -614,7 +334,7 @@ export default function Home() {
               className="border border-gray-800 rounded-xl p-6 bg-[#0B0F1A]"
             >
               <img
-                src="https://spriny.io/_next/image?url=%2Flogo.png&w=96&q=75"
+                src="logo.png"
                 alt="Spriny"
                 className="h-10 object-contain mb-6"
               />
@@ -689,7 +409,7 @@ export default function Home() {
               className="border border-gray-800 rounded-xl p-6 bg-[#0B0F1A]"
             >
               <img
-                src="https://media.licdn.com/dms/image/v2/D560BAQFtZv4tL7m5qg/company-logo_200_200/company-logo_200_200/0/1736703455836/xploresense_private_limited_logo?e=1769040000&v=beta&t=vmjG1C6SJJ-CjhO6GQx525gYsZmiHHAYsovyqkVqzEY"
+                src="xs.png"
                 alt="XploreSense Private Limited"
                 className="h-10 object-contain mb-6"
               />
@@ -723,6 +443,29 @@ export default function Home() {
               </p>
               <a
                 href="https://www.linkedin.com/company/prodware-solutions-llc/"
+                target="_blank"
+                className="inline-block mt-4 text-cyan-400 hover:underline text-sm"
+              >
+                Visit →
+              </a>
+            </motion.div>
+            
+            <motion.div
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3 }}
+              className="border border-gray-800 rounded-xl p-6 bg-[#0B0F1A]"
+            >
+              <img
+                src="Medmatch.webp"
+                alt="Medmatch"
+                className="h-10 object-contain mb-6"
+              />
+              <h3 className="text-xl font-semibold">Medmatch Network</h3>
+              <p className="mt-3 text-gray-400 text-sm leading-relaxed">
+                MedMatch Network is a cloud-based healthcare platform that connects doctors and patients to streamline and manage medical referrals and securely exchange patient information.
+              </p>
+              <a
+                href="https://medmatchnetwork.com/"
                 target="_blank"
                 className="inline-block mt-4 text-cyan-400 hover:underline text-sm"
               >
