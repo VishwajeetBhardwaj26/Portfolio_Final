@@ -51,19 +51,25 @@ export default function ProjectsSection() {
   return (
     <section className="max-w-7xl mx-auto py-20">
       <motion.h2
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         className="font-bold text-2xl sm:text-3xl md:text-4xl mb-10 sm:mb-7 md:mb-8"
       >
         Client Projects
       </motion.h2>
 
-      <p className="text-gray-400 max-w-2xl mb-12">
+      <motion.p
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.08 }}
+        className="text-gray-400 max-w-2xl mb-12"
+      >
         Selected client projects spanning enterprise, startup, and consulting
         collaborations.
-      </p>
+      </motion.p>
 
       <div className="border-t border-gray-800">
         {projects.map((project, i) => (
@@ -72,22 +78,31 @@ export default function ProjectsSection() {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.05 }}
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{
+              duration: 0.45,
+              delay: i * 0.06,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            whileHover={{ x: 6 }}
             className="
-              group grid grid-cols-[auto_1fr] sm:grid-cols-[3rem_1fr_auto]
+              group relative grid grid-cols-[auto_1fr] sm:grid-cols-[3rem_1fr_auto]
               gap-x-4 sm:gap-x-8 gap-y-3
               py-8 sm:py-10
               border-b border-gray-800
               items-start
-              transition-colors duration-300
-              hover:bg-white/[0.02]
               -mx-2 px-2 sm:-mx-4 sm:px-4
             "
           >
-            <span className="text-sm text-gray-600 font-mono pt-1 group-hover:text-cyan-400/70 transition-colors">
+            {/* Hover accent bar */}
+            <motion.span
+              className="absolute left-0 top-0 bottom-0 w-0.5 bg-cyan-400 origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"
+              aria-hidden
+            />
+
+            <span className="text-sm text-gray-600 font-mono pt-1 group-hover:text-cyan-400/70 transition-colors duration-300">
               {String(i + 1).padStart(2, "0")}
             </span>
 
@@ -109,12 +124,19 @@ export default function ProjectsSection() {
                 text-sm text-gray-600
                 pt-1
                 group-hover:text-cyan-400
-                group-hover:translate-x-1
                 transition-all duration-300
               "
             >
               View
-              <span aria-hidden>→</span>
+              <motion.span
+                aria-hidden
+                className="inline-block"
+                initial={false}
+                animate={{ x: 0 }}
+                whileHover={{ x: 4 }}
+              >
+                →
+              </motion.span>
             </span>
           </motion.a>
         ))}
