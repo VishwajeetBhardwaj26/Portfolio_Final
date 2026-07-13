@@ -174,7 +174,7 @@ export default function Home() {
       <ResumeViewer open={resumeOpen} onClose={closeResume} />
 
       {/* ================= HERO ================= */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+      <section className="relative min-h-screen flex items-start md:items-center justify-center px-6 pt-24 pb-16 md:pt-0 md:pb-0 overflow-hidden">
         {/* Ambient orbs */}
         <div
           className="ambient-orb w-[420px] h-[420px] bg-cyan-500/10 top-[-10%] left-[-5%]"
