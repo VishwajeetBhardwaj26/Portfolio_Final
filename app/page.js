@@ -1,11 +1,12 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import ProjectsSection from "./projects";
+import ResumeViewer from "./ResumeViewer";
 
-function CountUp({ target, suffix = "", duration = 1400 }) {
+function CountUp({ target, suffix = "", duration = 2800 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const [display, setDisplay] = useState(0);
@@ -17,7 +18,8 @@ function CountUp({ target, suffix = "", duration = 1400 }) {
 
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
+      // Gentle ease-out so early counts stay readable longer
+      const eased = 1 - Math.pow(1 - progress, 2);
       setDisplay(Math.round(target * eased));
       if (progress < 1) frame = requestAnimationFrame(tick);
     };
@@ -109,8 +111,7 @@ const testimonials = [
 const navButtons = [
   {
     label: "Resume",
-    href: "/Vishwajeet_Bhardwaj_Resume.pdf",
-    download: true,
+    action: "resume",
     border: "border-yellow-500/30 hover:border-yellow-400 hover:text-yellow-400",
   },
   {
@@ -143,6 +144,8 @@ export default function Home() {
   const formRef = useRef(null);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const [resumeOpen, setResumeOpen] = useState(false);
+  const closeResume = useCallback(() => setResumeOpen(false), []);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -168,6 +171,8 @@ export default function Home() {
 
   return (
     <main className="bg-[#0E1116] text-gray-200 overflow-x-hidden">
+      <ResumeViewer open={resumeOpen} onClose={closeResume} />
+
       {/* ================= HERO ================= */}
       <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
         {/* Ambient orbs */}
@@ -274,47 +279,62 @@ export default function Home() {
               </div>
               <div className="text-center sm:text-left flex-1">
                 <p className="text-2xl font-semibold text-gray-100">
-                  <CountUp target={4} />
+                  <CountUp target={4} duration={2400} />
                 </p>
                 <p className="text-xs sm:text-sm text-gray-400 mt-1">Countries</p>
               </div>
               <div className="text-center sm:text-left flex-1">
                 <p className="text-2xl font-semibold text-gray-100">
-                  <CountUp target={100} suffix="K+" />
+                  <CountUp target={100} suffix="K+" duration={3200} />
                 </p>
                 <p className="text-xs sm:text-sm text-gray-400 mt-1">Users Impacted</p>
               </div>
             </motion.div>
 
             <div className="grid grid-cols-2 place-items-center gap-4 pt-6 sm:flex sm:flex-wrap sm:gap-6 sm:justify-start">
-              {navButtons.map((btn, i) => (
-                <motion.a
-                  key={btn.label}
-                  href={btn.href}
-                  download={btn.download || undefined}
-                  initial={{ opacity: 0, scale: 0.7 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
+              {navButtons.map((btn, i) => {
+                const sharedClass = `
+                  w-24 h-24 sm:w-28 sm:h-28
+                  rounded-full
+                  bg-[#161B22] text-gray-200
+                  border
+                  flex items-center justify-center font-medium
+                  transition-colors duration-300
+                  ${btn.border}
+                `;
+                const motionProps = {
+                  initial: { opacity: 0, scale: 0.7 },
+                  animate: { opacity: 1, scale: 1 },
+                  transition: {
                     delay: 0.7 + i * 0.1,
                     type: "spring",
                     stiffness: 260,
                     damping: 18,
-                  }}
-                  whileHover={{ scale: 1.1, y: -4 }}
-                  whileTap={{ scale: 0.94 }}
-                  className={`
-                    w-24 h-24 sm:w-28 sm:h-28
-                    rounded-full
-                    bg-[#161B22] text-gray-200
-                    border
-                    flex items-center justify-center font-medium
-                    transition-colors duration-300
-                    ${btn.border}
-                  `}
-                >
-                  {btn.label}
-                </motion.a>
-              ))}
+                  },
+                  whileHover: { scale: 1.1, y: -4 },
+                  whileTap: { scale: 0.94 },
+                  className: sharedClass,
+                };
+
+                if (btn.action === "resume") {
+                  return (
+                    <motion.button
+                      key={btn.label}
+                      type="button"
+                      onClick={() => setResumeOpen(true)}
+                      {...motionProps}
+                    >
+                      {btn.label}
+                    </motion.button>
+                  );
+                }
+
+                return (
+                  <motion.a key={btn.label} href={btn.href} {...motionProps}>
+                    {btn.label}
+                  </motion.a>
+                );
+              })}
             </div>
           </div>
         </div>
